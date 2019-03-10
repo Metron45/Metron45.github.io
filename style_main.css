@@ -127,6 +127,7 @@ div.main_panel > #information > #photo > img {
 }
 
 div.main_panel > #information > #description {
+    height: 100%;
     text-align: justify;
 }
 
@@ -156,14 +157,6 @@ div.main_panel > .project > .project_info {
     align-content: flex-start;
 }
 
-div.main_panel > .project > .project_info > .project_title{
-    order: 0;
-}
-
-div.main_panel > .project > .project_info > .project_description {
-    order: 1;
-}
-
 div.bottom_panel {
     order: 2;
     padding: 1%;
@@ -176,7 +169,7 @@ div.bottom_panel {
 }
 
 div.bottom_panel > #legalities {
-    height: auto;
+    height: 25%;
 }
 
 div.bottom_panel > #logo{
