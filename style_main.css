@@ -1,0 +1,139 @@
+:root {
+    --panel-bg-color: darkgrey;
+    --secondary-color: gray;
+    --font-color: white;
+}
+
+body {
+    display: flex;
+    flex-flow: column;
+    font-family: 'Lato', sans-serif;
+}
+
+body > div{
+    background-color: var(--panel-bg-color);
+    color: var(--font-color);
+    display: flex;
+    border-radius: 1em;
+}
+
+div.top_panel{
+    order: 0;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    padding: 0.5em 1em;
+}
+
+div.top_panel > .button{
+    background-color: var(--secondary-color);
+    width: 21em;
+    border-radius: 15px;
+    border: none;
+    color: var(--font-color);
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+}
+
+@media (max-width: 900px) {
+    div.top_panel {
+        flex-wrap: wrap;
+    }
+    div.top_panel>.button {
+        width:auto;
+        margin-top: 0.5em;
+    }
+
+}
+
+div.main_panel {
+    order: 1;
+    margin: 1%;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+}
+
+div.main_panel > #title {
+    text-align: center;
+    background-color: var(--secondary-color);
+    border-radius: 1em;
+    margin: 0 0.5em 0.5em;
+}
+
+div.main_panel > #information {
+    display: flex;
+    flex-direction: column;
+}
+
+div.main_panel > #information > #photo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    height: auto;
+    border: 10px;
+    border-radius: 1em;
+    object-fit: cover;
+}
+
+div.main_panel>#information>#description {
+    text-align: justify;
+}
+
+@media (min-width: 720px) {
+    div.main_panel>#information {
+        flex-direction: row;
+    }
+    div.main_panel>#information>#photo {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+}
+
+div.main_panel > .project {
+    display: grid;
+    grid-template-columns: 1fr, 4fr;
+    grid-template-rows: 25%, 75%;
+}
+
+div.main_panel>.project>.project_screen{
+    grid-row: 1/3;
+    grid-column: 1/2;
+    height: 5em;
+    object-fit: contain;
+}
+
+div.main_panel>.project>.project_title {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+div.main_panel>.project>.project_description {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+div.bottom_panel {
+    order: 2;
+    padding: 1%;
+    height: 3em;
+    
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: flex-start;
+   
+}
+
+div.bottom_panel>#legalities {
+    height: 100%;
+}
+
+div.bottom_panel>#logo{
+    height: 100%;
+    border-radius: 4px;
+    object-fit: contain;
+}
