@@ -61,6 +61,7 @@ div.main_panel > #title {
     background-color: var(--secondary-color);
     border-radius: 1em;
     margin: 0 0.5em 0.5em;
+    order: -1;
 }
 
 div.main_panel > #information {
@@ -83,7 +84,7 @@ div.main_panel>#information>#description {
     text-align: justify;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 720px) , only screen and (max-device-width: 640px){
     div.main_panel>#information {
         flex-direction: row;
     }
