@@ -66,7 +66,7 @@ div.main_panel > #title {
 
 div.main_panel > #information {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 div.main_panel > #information > #photo {
@@ -78,19 +78,17 @@ div.main_panel > #information > #photo {
     border: 10px;
     border-radius: 1em;
     object-fit: cover;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
 }
 
 div.main_panel>#information>#description {
     text-align: justify;
 }
 
-@media (min-width: 720px), handheld{
+@media (max-width: 720px), handheld{
     div.main_panel>#information {
-        flex-direction: row;
-    }
-    div.main_panel>#information>#photo {
-        margin-left: 0.5em;
-        margin-right: 0.5em;
+         flex-direction: column;
     }
 }
 
