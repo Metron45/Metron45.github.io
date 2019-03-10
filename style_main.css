@@ -127,7 +127,6 @@ div.main_panel > #information > #photo > img {
 }
 
 div.main_panel > #information > #description {
-    height: 100%;
     text-align: justify;
 }
 
