@@ -2,6 +2,7 @@
     --panel-bg-color: rgba(140, 140, 140, 0.5);
     --text-background: #009933;
     --secondary-text-background: #00802b;
+    --button-active-color: #003300;
     --header-font-color: white;
     --paragraph-font-color: white;
 }
@@ -30,7 +31,7 @@ html, body {
     background-repeat: no-repeat;
 }
 
-body > div{
+body > div,footer,header,article{
     color: var(--header-font-color);
     display: flex;
     border-radius: 1em;
@@ -39,7 +40,7 @@ body > div{
 
 
 
-div.top_panel{
+.top_panel{
     order: 0;
     justify-content: space-around;
     flex-wrap: nowrap;
@@ -47,7 +48,7 @@ div.top_panel{
 }
 
 
-div.top_panel > .button{
+.top_panel > .button{
     background-color: var(--text-background);
     width: 21em;
     border-radius: 15px;
@@ -66,34 +67,34 @@ div.top_panel > .button{
     text-shadow: 2px 2px #595959;
 }
 
-div.top_panel > .button:hover {
-    background-color: var(--secondary-text-background);
-    transition: linear 1s;
+.top_panel > .button:hover {
+    background-color: var(--button-active-color);
+    transition: linear 0.2s;
 }
 
-div.top_panel>.button:active {
+.top_panel>.button:active {
     color: #595959;
     transition: linear 0s;
     text-shadow: 0px 0px #595959;
 }
 
-div.top_panel>.button:focus {
-    background-color: var(--secondary-text-background);
+.top_panel>.button:focus {
+    background-color: var(--button-active-color);
     transition: linear 0s;
     text-shadow: 0px 0px #595959;
 }
 
 @media (max-width: 900px) {
-    div.top_panel {
+    .top_panel {
         flex-wrap: wrap;
     }
-    div.top_panel>.button {
+    .top_panel>.button {
         width:auto;
         margin-top: 0.5em;
     }
 }
 
-div.main_panel {
+.main_panel {
     order: 1;
     margin-top: 1%;
     margin-bottom: 1%;
@@ -102,7 +103,7 @@ div.main_panel {
     flex-direction: column;
 }
 
-div.main_panel > #title {
+.main_panel > #title {
     text-align: center;
     background-color: var(--text-background);
     border-radius: 1em;
@@ -110,20 +111,20 @@ div.main_panel > #title {
     order: -1;
 }
 
-div.main_panel > #information {
+.main_panel > #information {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
 }
 
-div.main_panel > #information > #photo{
+.main_panel > #information > #photo{
     width: 50%;
     height: auto;
      margin-left: 0.5em;
      margin-right: 0.5em;
 }
 
-div.main_panel > #information > #photo > img {
+.main_panel > #information > #photo > img {
     width: 100%;
     height: 100%;
     border: 10px;
@@ -133,18 +134,18 @@ div.main_panel > #information > #photo > img {
     border-radius: 10%;
 }
 
-div.main_panel > #information > #description {
+.main_panel > #information > #description {
     text-align: justify;
 }
 
 @media (max-width: 900px){
-    div.main_panel>#information{
+    .main_panel>#information{
         flex-direction: column;
         justify-content: center;
     }
 }
 
-div.main_panel > .project {
+.main_panel > .project {
     display: flex;
     flex-flow: row;
     background-color: var(--secondary-text-background);
@@ -152,18 +153,18 @@ div.main_panel > .project {
     border-radius: 1rem;
 }
 
-div.main_panel > .project > .project_screen{
+.main_panel > .project > .project_screen{
     height: 100%;
     object-fit: contain;
 }
 
-div.main_panel > .project > .project_info {
+.main_panel > .project > .project_info {
     display: flex;
     flex-direction: column;
     align-content: flex-start;
 }
 
-div.bottom_panel {
+.bottom_panel {
     order: 2;
     padding: 1%;
     height: 7em;
@@ -174,11 +175,11 @@ div.bottom_panel {
    
 }
 
-div.bottom_panel > #legalities {
+.bottom_panel > #legalities {
     height: 25%;
 }
 
-div.bottom_panel > #logo{
+.bottom_panel > #logo{
     height: 6em;
     border-radius: 4px;
     object-fit: contain;
