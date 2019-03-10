@@ -27,6 +27,7 @@ html, body {
     background-size: 100%;
     background-color: #cccccc;
     font-family: 'PT Sans', sans-serif;
+    background-repeat: no-repeat;
 }
 
 body > div{
@@ -72,6 +73,12 @@ div.top_panel > .button:hover {
 
 div.top_panel>.button:active {
     color: #595959;
+    transition: linear 0s;
+    text-shadow: 0px 0px #595959;
+}
+
+div.top_panel>.button:focus {
+    background-color: var(--secondary-text-background);
     transition: linear 0s;
     text-shadow: 0px 0px #595959;
 }
