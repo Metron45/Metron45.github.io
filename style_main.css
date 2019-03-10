@@ -1,21 +1,42 @@
 :root {
-    --panel-bg-color: darkgrey;
-    --secondary-color: gray;
-    --font-color: white;
+    --panel-bg-color: rgba(140, 140, 140, 0.5);
+    --text-background: #009933;
+    --secondary-text-background: #00802b;
+    --header-font-color: white;
+    --paragraph-font-color: white;
 }
 
-body {
+p{
+    font-size: 1.2em;
+    color: var(--paragraph-font-color);
+    background-color: var(--secondary-text-background);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    text-shadow: 2px 2px black;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+html, body {
     display: flex;
     flex-flow: column;
-    font-family: 'Lato', sans-serif;
+    background-image: url("background.jpg");
+    background-size: 100%;
+    background-color: #cccccc;
+    font-family: 'PT Sans', sans-serif;
 }
 
 body > div{
-    background-color: var(--panel-bg-color);
-    color: var(--font-color);
+    color: var(--header-font-color);
     display: flex;
     border-radius: 1em;
+    background-color: var(--panel-bg-color);
 }
+
+
 
 div.top_panel{
     order: 0;
@@ -24,17 +45,35 @@ div.top_panel{
     padding: 0.5em 1em;
 }
 
+
 div.top_panel > .button{
-    background-color: var(--secondary-color);
+    background-color: var(--text-background);
     width: 21em;
     border-radius: 15px;
     border: none;
-    color: var(--font-color);
+    color: var(--header-font-color);
     padding: 0.5em 1em;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 1em;
+    margin-left: 0.2em;
+    margin-right: 0.2em; 
+    
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1em;
+    text-shadow: 2px 2px #595959;
+}
+
+div.top_panel > .button:hover {
+    background-color: var(--secondary-text-background);
+    transition: linear 1s;
+}
+
+div.top_panel>.button:active {
+    color: #595959;
+    transition: linear 0s;
+    text-shadow: 0px 0px #595959;
 }
 
 @media (max-width: 900px) {
@@ -45,12 +84,12 @@ div.top_panel > .button{
         width:auto;
         margin-top: 0.5em;
     }
-
 }
 
 div.main_panel {
     order: 1;
-    margin: 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
     padding: 1%;
     display: flex;
     flex-direction: column;
@@ -58,7 +97,7 @@ div.main_panel {
 
 div.main_panel > #title {
     text-align: center;
-    background-color: var(--secondary-color);
+    background-color: var(--text-background);
     border-radius: 1em;
     margin: 0 0.5em 0.5em;
     order: -1;
@@ -66,75 +105,74 @@ div.main_panel > #title {
 
 div.main_panel > #information {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: flex-start;
 }
 
-div.main_panel > #information > #photo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 30%;
+div.main_panel > #information > #photo{
+    width: 50%;
     height: auto;
-    border: 10px;
-    border-radius: 1em;
-    object-fit: cover;
+     margin-left: 0.5em;
+     margin-right: 0.5em;
 }
 
-div.main_panel>#information>#description {
+div.main_panel > #information > #photo > img {
+    width: 100%;
+    height: 100%;
+    border: 10px;
+    object-fit: contain;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    border-radius: 10%;
+}
+
+div.main_panel > #information > #description {
     text-align: justify;
 }
 
-@media (min-width: 720px), handheld{
-    div.main_panel>#information {
-        flex-direction: row;
-    }
-    div.main_panel>#information>#photo {
-        margin-left: 0.5em;
-        margin-right: 0.5em;
+@media (max-width: 900px){
+    div.main_panel>#information{
+        flex-direction: column;
+        justify-content: center;
     }
 }
 
 div.main_panel > .project {
-    display: grid;
-    grid-template-columns: 1fr, 4fr;
-    grid-template-rows: 25%, 75%;
+    display: flex;
+    flex-flow: row;
+    background-color: var(--secondary-text-background);
+    padding: 1rem;
+    border-radius: 1rem;
 }
 
-div.main_panel>.project>.project_screen{
-    grid-row: 1/3;
-    grid-column: 1/2;
-    height: 5em;
+div.main_panel > .project > .project_screen{
+    height: 100%;
     object-fit: contain;
 }
 
-div.main_panel>.project>.project_title {
-    grid-column: 2/3;
-    grid-row: 1/2;
-}
-
-div.main_panel>.project>.project_description {
-    grid-column: 2/3;
-    grid-row: 2/3;
+div.main_panel > .project > .project_info {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
 }
 
 div.bottom_panel {
     order: 2;
     padding: 1%;
-    height: 3em;
-    
+    height: 7em;
     display: flex;
     flex-flow: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
    
 }
 
-div.bottom_panel>#legalities {
-    height: 100%;
+div.bottom_panel > #legalities {
+    height: 25%;
 }
 
-div.bottom_panel>#logo{
-    height: 100%;
+div.bottom_panel > #logo{
+    height: 6em;
     border-radius: 4px;
     object-fit: contain;
 }
