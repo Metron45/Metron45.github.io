@@ -13,6 +13,18 @@
     --font-size: 1vw;
     --h1-font-size: 3vw;
     --h2-font-size: 2wv;
+
+    --media-rule-width: 900px;
+}
+
+
+@media (max-width: 900px) {
+    :root {
+        --spacing: 0.5rem;
+        --font-size: 1rem;
+        --h1-font-size: 3vw;
+        --h2-font-size: 2wv;
+    }
 }
 
 p{
@@ -65,7 +77,6 @@ body > div,footer,header,article{
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-end;
-    flex-wrap: nowrap;
     align-items: flex-start;
     align-content: flex-start;
 
@@ -147,7 +158,12 @@ body > div,footer,header,article{
     background-color: var(--secondary-text-background);
 }
 
-@media (max-width: 900px){
+@media (max-width: 900px) {
+
+    .top_panel{
+        justify-content: space-around;
+    }
+
     .main_panel > #information{
         flex-direction: column;
         justify-content: center;
@@ -168,10 +184,19 @@ body > div,footer,header,article{
 }
 
 .main_panel > .project > .project_screen{
+    width: 30%;
+    height: auto;
+    margin-left: var(--spacing);
+    margin-right: var(--spacing);
+}
+
+.main_panel> .project > .project_screen > a > img {
+    width: 100%;
     height: 100%;
+    border: var(--spacing);
     object-fit: contain;
-    padding: var(--spacing);
-    margin: var(--spacing);
+    -webkit-border-radius: var(--spacing);
+    -moz-border-radius: var(--spacing);
     border-radius: var(--spacing);
 }
 
@@ -182,6 +207,15 @@ body > div,footer,header,article{
     padding: var(--spacing);
     margin: var(--spacing);
     border-radius: var(--spacing);
+}
+
+@media (max-width: 900px) {
+    .main_panel > .project{
+        flex-flow: column;
+    }
+    .main_panel > .project > .project_screen{
+        align-self: center;
+    }
 }
 
 .bottom_panel {
