@@ -50,11 +50,11 @@ h2{
 }
 
 html, body {
-    background-image: url("background.jpg");
-    background-position: center center;
-    background-size: cover;
 
-    background-color: var(--shadow-color);
+    background-image: url("background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     font-family: 'PT Sans', sans-serif;
     background-repeat: no-repeat;
@@ -63,9 +63,9 @@ html, body {
 }
 
 body > div,footer,header,article{
+    background: var(--panel-bg-color);
     color: var(--header-font-color);
     display: flex;
-    background-color: var(--panel-bg-color);
     width: 100%;
 }
 
@@ -79,7 +79,6 @@ body > div,footer,header,article{
     justify-content: flex-end;
     align-items: flex-start;
     align-content: flex-start;
-
     background-color: var(--text-background);
 }
 
@@ -224,7 +223,7 @@ body > div,footer,header,article{
     flex-flow: row;
     justify-content: space-between; 
     align-items: center;
-   
+    border-radius: 0px 0px var(--spacing) var(--spacing);
 }
 
 .bottom_panel > #legalities {
